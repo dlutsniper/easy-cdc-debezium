@@ -1,0 +1,4 @@
+rootProject.name = 'easy-cdc-debezium-root'
+include 'easy-cdc-debezium'
+include 'easy-cdc-debezium-boot-starter'
+include 'easy-cdc-debezium-test'

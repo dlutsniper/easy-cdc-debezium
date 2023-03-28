@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    include: debezium
+dlutsniper:
+  health: health    # debezium, health
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"    # "health"
+    cors:
+      allowed-origins: "*"
+      allowed-methods: "GET,POST"
+  endpoint:
+    health:
+      show-details: always    # never, when-authorized

@@ -1,0 +1,11 @@
+plugins { id 'java' }
+tasks.forEach { it.enabled = false } // 禁止根项目一切行为 (不影响模块)
+allprojects {
+    group = 'com.dlutsniper'
+    version = "0.0.1"
+    sourceCompatibility = '17'
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        mavenCentral()
+    }
+}
