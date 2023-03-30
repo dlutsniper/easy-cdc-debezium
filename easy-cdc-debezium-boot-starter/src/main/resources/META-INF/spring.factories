@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.dlutsniper.easy.cdc.autoconfigure.DebeziumAutoConfiguration
+  com.dlutsniper.easy.cdc.debezium.autoconfigure.DebeziumAutoConfiguration

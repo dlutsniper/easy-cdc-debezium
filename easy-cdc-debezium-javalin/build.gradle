@@ -1,0 +1,7 @@
+plugins {
+    id 'java-library'
+}
+dependencies {
+    api project(':easy-cdc-debezium')
+    implementation 'io.javalin:javalin:5.4.2'
+}
