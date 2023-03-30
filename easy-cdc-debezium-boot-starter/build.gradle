@@ -6,6 +6,8 @@ dependencies {
     api project(':easy-cdc-debezium-spring')
     compileOnly 'org.springframework.boot:spring-boot-starter:3.0.5'
     compileOnly 'org.springframework.boot:spring-boot-starter-actuator:3.0.5'
+    compileOnly 'org.apache.rocketmq:rocketmq-client-java:5.0.5'
+    compileOnly 'org.apache.pulsar:pulsar-client:2.11.0'
     annotationProcessor 'org.springframework.boot:spring-boot-autoconfigure-processor:3.0.5'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor:3.0.5'
 }

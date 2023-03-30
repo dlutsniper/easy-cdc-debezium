@@ -26,7 +26,6 @@ import java.util.regex.Pattern;
 public class DebeziumServer {
     private static final Logger LOGGER = LoggerFactory.getLogger(DebeziumServer.class);
     private static final Pattern SHELL_PROPERTY_NAME_PATTERN = Pattern.compile("^[a-zA-Z0-9_]+_+[a-zA-Z0-9_]+$");
-    //    @Autowired
     private Properties debeziumProperties;
     private DebeziumEngine.ChangeConsumer<ChangeEvent<Object, Object>> changeConsumer;
     private DebeziumEngine.ConnectorCallback connectorCallback;

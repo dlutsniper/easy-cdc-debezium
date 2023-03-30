@@ -26,7 +26,6 @@ import java.util.stream.Stream;
  * <pre>
  * Original Source Code:
  * https://github.com/debezium/debezium-server/blob/main/debezium-server-redis/src/main/java/io/debezium/server/redis/RedisStreamChangeConsumer.java
- * https://github.com/debezium/debezium/blob/v2.1.3.Final/debezium-server/debezium-server-redis/src/main/java/io/debezium/server/redis/RedisStreamChangeConsumer.java
  *
  * 1.- @Named("redis") @Dependent
  * 2.jakarta
