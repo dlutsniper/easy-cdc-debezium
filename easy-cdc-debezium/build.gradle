@@ -20,12 +20,23 @@ task sourcesJar(type: Jar) {
 artifacts {
     archives javadocJar, sourcesJar
 }
+//java {
+//    withJavadocJar()
+//    withSourcesJar()
+//}
+tasks.withType(GenerateModuleMetadata) {
+    enabled = false
+}
 publishing {
     publications {
         mavenJava(MavenPublication) {
             from components.java
+            artifact sourcesJar
+            artifact javadocJar
             pom {
                 name = 'easy-cdc-debezium'
+                artifactId = 'easy-cdc-debezium'
+                packaging = 'jar'
                 description = 'easy-cdc-debezium is a simple CDC pattern component based on Spring / Spring Boot and Embedded Engine.'
                 url = 'https://github.com/dlutsniper/easy-cdc-debezium'
                 scm {
@@ -50,14 +61,11 @@ publishing {
         }
     }
     repositories {
-//        maven {
-//            def releasesRepoUrl = layout.buildDirectory.dir('repos/releases')
-//            def snapshotsRepoUrl = layout.buildDirectory.dir('repos/snapshots')
-//            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
-//        }
         maven {
-            name = "ossrhSnapshot"
-            url = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+            def releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            def snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+            name = version.endsWith('SNAPSHOT') ? "ossrhSnapshot" : "ossrh"
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
             credentials {
                 username = findProperty('ossrhUsername')
                 password = findProperty('ossrhPassword')
